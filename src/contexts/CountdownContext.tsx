@@ -4,7 +4,7 @@ import { ChallengesContext } from '../contexts/ChallengesContext';
 export const CountdownContext = createContext({} as CountdownContextData); 
 
 let countdownTimeout: NodeJS.Timeout;
-const MAX_TIME = 60 * 0.1;
+const MAX_TIME = 60 * 25;
 
 export function CountdownProvider({ children }: CountdownProviderProps) {
   const { startNewChallenge } = useContext(ChallengesContext);
