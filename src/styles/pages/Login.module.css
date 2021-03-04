@@ -1,0 +1,16 @@
+.loginContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  height: 100vh;
+  width: 100%;
+
+  background: var(--blue);
+}
+
+.loginContainer section:first-child img {
+  max-height: 37.5rem;
+  max-width: 48rem;
+  
+  transform: translateX(-30px);
+}

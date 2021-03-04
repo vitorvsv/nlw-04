@@ -1,0 +1,82 @@
+.formContainer h1 {
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 2.25rem;
+  color: var(--white);
+
+  margin-bottom: 1.5rem;
+}
+
+.description {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2.5rem;
+
+  width: 318px;
+  height: 60px;
+
+  font-family: Inter;
+  font-weight: 500;
+  
+  font-size: 1.25rem;
+
+  color: var(--text-highlight);
+}
+
+.description img {
+  margin-right: 1rem;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.formContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.formContainer > img {
+  width: 22.5rem;
+  height: 4.75rem;
+
+  margin-bottom: 6rem;
+}
+
+.formContainer .inputContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  padding: 0 1.25rem;
+
+  width: 26.25rem;
+  height: 5rem;
+
+  border-radius: 5px 0px 0px 5px;
+
+  background: linear-gradient(to right, rgba(var(--blue-dark-rgb), 1), rgba(var(--blue-dark-rgb), 0.2));
+}
+
+.formContainer .inputContainer input {
+  background: none;
+  border: none;
+  outline: unset;
+
+  color: var(--white);
+  font-size: 1.25rem;
+}
+
+.formContainer .inputContainer input::placeholder {
+  color: var(--text-highlight);
+}
+
+.formContainer .inputContainer img {
+  padding: 20px;
+  cursor: pointer;
+}
+
+.formContainer button {
+  background-color: transparent;
+  border: unset;
+  outline: none;
+}
