@@ -34,11 +34,11 @@ export function LoginForm() {
           <input 
             type="text" 
             placeholder="Digite seu username"
-            onKeyUp={(evt) => { setUsername(evt.target.value) }}/>
+            onKeyUp={(evt) => { setUsername((evt.target as HTMLInputElement).value) }}/>
         </div>
         <div>
           <button
-            onClick={() => loginHandler(username)}
+            onClick={() => loginHandler()}
           >
             <img src="/icons/next.svg" alt=""/>
           </button>
