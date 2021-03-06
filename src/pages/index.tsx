@@ -46,15 +46,23 @@ export default function Home(props: HomeProps) {
 // Também é possível fazer requisições http dentro dessa função
 // OBS: Os cookies foram definidos aqui para que quando os crawlers acessem a página
 // os dados dos cookies já estejam no HTML (lembrar que os crawlers não esperam o JS carregar)
-export const getServerSideProps: GetServerSideProps = async (ctx) => {
+export const getServerSideProps: GetServerSideProps = async ({ res, req }) => {
 
-  const { level, currentExperience, challengesCompleted } = ctx.req.cookies;
+  const { level, currentExperience, challengesCompleted } = req.cookies;
+  const login = req.cookies['moveit_login'] ? req.cookies['moveit_login'] : '';
+
+  if (!login) {
+    res.statusCode = 302;
+    res.setHeader('Location', `/login`);
+    return { props: {} }
+  }
 
   return {
     props: {
       level: Number(level), 
       currentExperience: Number(currentExperience), 
       challengesCompleted: Number(challengesCompleted),
+      login: login,
     }
   }
 } 
@@ -63,4 +71,5 @@ interface HomeProps {
   level: number;
   currentExperience: number; 
   challengesCompleted: number;
+  login: string;
 }
